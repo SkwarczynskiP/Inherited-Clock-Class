@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Inherited_Clock_Class",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Inherited_Clock_Class::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Inherited_Clock_Class-Debug-e7d6016e23d909a52d95.json",
+					"name" : "Inherited_Clock_Class",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/MY STUFF/OU Winter 2024/CSI 2320/Project6/Inherited-Clock-Class/cmake-build-debug",
+		"source" : "C:/MY STUFF/OU Winter 2024/CSI 2320/Project6/Inherited-Clock-Class"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
