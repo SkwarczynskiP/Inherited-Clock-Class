@@ -17,13 +17,23 @@ CityClock::CityClock(const char* name, int h, int m, int s) : Clock(h, m, s) {
 }
 
 //Copy Constructor
-CityClock::CityClock(const CityClock &other) : Clock(other) {
+CityClock::CityClock(const CityClock &other){
+    hours = other.hours;
+    minutes = other.minutes;
+    seconds = other.seconds;
+    is24Hour = other.is24Hour;
+    isAM = other.isAM;
     cityName = new char[strlen(other.cityName) + 1];
     strcpy(cityName, other.cityName);
 }
 
 //Move Constructor
-CityClock::CityClock(CityClock &&other) : Clock(move(other)) {
+CityClock::CityClock(CityClock &&other){
+    hours = other.hours;
+    minutes = other.minutes;
+    seconds = other.seconds;
+    is24Hour = other.is24Hour;
+    isAM = other.isAM;
     cityName = other.cityName;
     other.cityName = nullptr;
 }
@@ -31,7 +41,11 @@ CityClock::CityClock(CityClock &&other) : Clock(move(other)) {
 //Copy Assignment Operator
 CityClock &CityClock::operator=(const CityClock &other){
     if (this != &other) {
-        Clock::operator=(other);
+        hours = other.hours;
+        minutes = other.minutes;
+        seconds = other.seconds;
+        is24Hour = other.is24Hour;
+        isAM = other.isAM;
         delete[] cityName;
         cityName = new char[strlen(other.cityName) + 1];
         strcpy(cityName, other.cityName);
@@ -42,7 +56,11 @@ CityClock &CityClock::operator=(const CityClock &other){
 //Move Assignment Operator
 CityClock &CityClock::operator=(CityClock &&other){
     if (this != &other) {
-        Clock::operator=(move(other));
+        hours = other.hours;
+        minutes = other.minutes;
+        seconds = other.seconds;
+        is24Hour = other.is24Hour;
+        isAM = other.isAM;
         delete[] cityName;
         cityName = other.cityName;
         other.cityName = nullptr;
@@ -111,6 +129,16 @@ CityClock CityClock::operator+(int sec) const {
 
 //Overloaded Ostream Insertion Operator
 ostream& operator<<(ostream& os, const CityClock& clock) {
-    os << static_cast<string>(clock);
+    os << clock.cityName << " - ";
+    if (clock.is24Hour) {
+        os << setw(2) << setfill('0') << clock.hours << ":" << setw(2) << setfill('0') << clock.minutes << ":" << setw(2) << setfill('0') << clock.seconds;
+    } else {
+        os << setw(2) << setfill('0') << clock.hours << ":" << setw(2) << setfill('0') << clock.minutes << ":" << setw(2) << setfill('0') << clock.seconds;
+        if (clock.isAM) {
+            os << " AM";
+        } else {
+            os << " PM";
+        }
+    }
     return os;
 }

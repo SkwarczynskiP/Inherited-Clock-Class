@@ -17,7 +17,6 @@ public:
     virtual void toggleFormat(); // Function to Switch Time Format
     virtual void show(); // Function to Display Time
     virtual void tick(); // Function to Increment Time
-    virtual ~Clock() {}; // Virtual Destructor
 };
 
 #endif
