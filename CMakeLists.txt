@@ -3,4 +3,7 @@ project(Inherited_Clock_Class)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(Inherited_Clock_Class main.cpp)
+add_executable(Inherited_Clock_Class main.cpp
+        CityClock.cpp
+        Clock.h
+        Clock.cpp)
