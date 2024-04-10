@@ -4,7 +4,6 @@
 using namespace std;
 
 int main() {
-
     // Clock Object Using Default Constructor
     cout << endl << "Clock Object Using Default Constructor:" << endl;
     Clock defaultClock;

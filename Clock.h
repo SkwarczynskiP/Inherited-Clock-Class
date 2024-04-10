@@ -1,6 +1,5 @@
 #ifndef CLOCK_H
 #define CLOCK_H
-
 using namespace std;
 
 class Clock {
